@@ -1,6 +1,7 @@
 :root {
   /* Font stack from Bootstrap 4 */
   --app-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --app-font-size: 2em;
 
   --control-label-font-size: 0.75rem;
   --color1: #2a3941;
