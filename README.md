@@ -1,5 +1,8 @@
 # time-progress
 
+<img align="right" width="120" height="120"
+     src="./logo.svg" alt="Yes All Not logo">
+
 [![XO code style][codestyle-image]][codestyle-url]
 
 [![Build Status][travis-image]][travis-url]
