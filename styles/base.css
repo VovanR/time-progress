@@ -51,9 +51,26 @@ label {
   color: inherit;
 }
 
-meter {
+
+.value-meter-container {
+  position: relative;
+}
+
+.value-meter-label {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.5em;
+  font-size: 75%;
+}
+
+.value-meter {
   width: 100%;
 }
+
 
 .value-output {
   text-align: right;

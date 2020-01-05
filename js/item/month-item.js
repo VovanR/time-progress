@@ -28,6 +28,10 @@ class MonthItem extends BaseItem {
     return this.currentDate.getMonth() + 1
   }
 
+  getValueOutputLabel() {
+    return new Intl.DateTimeFormat('en-US', {month: 'long'}).format(this.currentDate)
+  }
+
   getMaxValueOutputValue() {
     return 12
   }

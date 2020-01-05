@@ -11,6 +11,8 @@ class BaseItem {
     this.maxValueOutElement = null
     this.valuePercentElement = null
     this.meterElement = null
+    this.meterElement = null
+    this.meterContainerElement = null
   }
 
   init() {
@@ -22,9 +24,11 @@ class BaseItem {
   buildElements() {
     this.labelElement = this.buildLabelElement()
     this.valueOutputElement = this.buildValueOutputElement()
+    this.valueOutputLabelElement = this.buildValueOutputLabelElement()
     this.maxValueOutElement = this.buildMaxValueOutputElement()
     this.valuePercentElement = this.buildValuePercentElement()
     this.meterElement = this.buildMeterElement()
+    this.meterContainerElement = this.buildMeterContainerElement()
   }
 
   appendTo(element) {
@@ -32,7 +36,9 @@ class BaseItem {
     element.append(this.valueOutputElement)
     element.append(this.maxValueOutElement)
     element.append(this.valuePercentElement)
-    element.append(this.meterElement)
+    this.meterContainerElement.append(this.valueOutputLabelElement)
+    this.meterContainerElement.append(this.meterElement)
+    element.append(this.meterContainerElement)
 
     return this
   }
@@ -51,6 +57,16 @@ class BaseItem {
     return createElement({
       type: 'output',
       className: 'value-output',
+    })
+  }
+
+  buildValueOutputLabelElement() {
+    const label = this.getValueOutputLabel()
+
+    return createElement({
+      type: 'output',
+      className: 'value-meter-label',
+      text: label,
     })
   }
 
@@ -73,11 +89,18 @@ class BaseItem {
    */
   buildMeterElement() {
     return createElement({
+      className: 'value-meter',
       type: 'meter',
       attributes: {
         id: this.name,
         name: this.name,
       }
+    })
+  }
+
+  buildMeterContainerElement() {
+    return createElement({
+      className: 'value-meter-container',
     })
   }
 
@@ -103,6 +126,10 @@ class BaseItem {
     throw new Error('Not implemented')
   }
 
+  getValueOutputLabel() {
+    return null
+  }
+
   getMaxValueOutputValue() {
     throw new Error('Not implemented')
   }
@@ -115,11 +142,13 @@ class BaseItem {
     const min = startDate.getTime()
     const max = endDate.getTime()
     const valueOutput = this.getValueOutputValue()
+    const valueOutputLabel = this.getValueOutputLabel()
     const maxValueOutput = this.getMaxValueOutputValue()
     const valuePercent = Math.floor((value - min) / (max - min) * 100)
 
     return {
       valueOutput,
+      valueOutputLabel,
       maxValueOutput,
       valuePercent,
       value,
@@ -131,6 +160,7 @@ class BaseItem {
   update() {
     const {
       valueOutput,
+      valueOutputLabel,
       maxValueOutput,
       valuePercent,
       value,
@@ -154,6 +184,10 @@ class BaseItem {
     this.meterElement.setAttribute('low', min + Math.floor(total * 0.33))
     this.meterElement.setAttribute('high', min + Math.floor(total * 0.66))
     this.meterElement.setAttribute('optimum', min + Math.floor(total * 0.8))
+
+    if (valueOutputLabel !== null) {
+      this.valueOutputLabelElement.value = valueOutputLabel
+    }
 
     return this
   }

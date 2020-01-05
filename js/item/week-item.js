@@ -32,6 +32,10 @@ class WeekItem extends BaseItem {
     return this.currentDate.getDay() + 1
   }
 
+  getValueOutputLabel() {
+    return new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(this.currentDate)
+  }
+
   getMaxValueOutputValue() {
     return 7
   }
