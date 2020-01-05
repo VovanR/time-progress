@@ -57,9 +57,16 @@ label {
 }
 
 .value-meter-label {
+  --color: #fff;
+  --shadowColor: #000;
+
   display: flex;
   align-items: center;
-  color: #fff;
+  color: var(--color);
+  text-shadow: 0 1px var(--shadowColor),
+               0 -1px var(--shadowColor),
+               -1px 0 var(--shadowColor),
+               1px 0 var(--shadowColor);
   position: absolute;
   top: 0;
   bottom: 0;
