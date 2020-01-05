@@ -139,9 +139,11 @@ class BaseItem {
     } = this.getInfo()
 
     this.valueOutputElement.value = valueOutput
+
     if (maxValueOutput !== null) {
       this.maxValueOutElement.value = maxValueOutput
     }
+
     this.valuePercentElement.value = valuePercent
 
     const total = max - min
