@@ -29,7 +29,7 @@ class WeekItem extends BaseItem {
   }
 
   getValueOutputValue() {
-    return this.currentDate.getDay()
+    return this.currentDate.getDay() + 1
   }
 
   getMaxValueOutputValue() {
