@@ -27,6 +27,13 @@ class DayItem extends BaseItem {
     return this.currentDate.getDate()
   }
 
+  // TODO
+  getValueOutputLabel() {
+    const value = this.currentDate.getHours()
+
+    return `${value}/24`
+  }
+
   getMaxValueOutputValue() {
     const endDate = this.cloneCurrentDate()
     endDate.setMonth(endDate.getMonth() + 1, 1)

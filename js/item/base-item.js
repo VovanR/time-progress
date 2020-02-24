@@ -61,12 +61,9 @@ class BaseItem {
   }
 
   buildValueOutputLabelElement() {
-    const label = this.getValueOutputLabel()
-
     return createElement({
       type: 'output',
       className: 'value-meter-label',
-      text: label,
     })
   }
 

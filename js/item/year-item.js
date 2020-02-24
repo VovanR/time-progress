@@ -29,9 +29,47 @@ class YearItem extends BaseItem {
     return this.currentDate.getFullYear()
   }
 
+  getValueOutputLabel() {
+    const now = this.currentDate
+    const start = new Date(now.getFullYear(), 0, 0)
+    const diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000)
+    const oneDay = 1000 * 60 * 60 * 24
+    const day = Math.floor(diff / oneDay)
+    const days = daysInYear(now)
+
+    return `${day}/${days}`
+  }
+
   getMaxValueOutputValue() {
     return ''
   }
+}
+
+/**
+ * @param {Date} date
+ * @returns {boolean}
+ */
+function isLeapYear(date) {
+  const year = date.getFullYear()
+
+  if ((year & 3) !== 0) {
+    return false
+  }
+
+  return ((year % 100) !== 0 || (year % 400) === 0)
+}
+
+/**
+ * @param {Date} date
+ * @returns {number}
+ */
+function daysInYear(date) {
+  if (isLeapYear(date)) {
+    // Leap year
+    return 366
+  }
+
+  return 365
 }
 
 export default YearItem

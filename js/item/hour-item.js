@@ -26,6 +26,13 @@ class HourItem extends BaseItem {
     return this.currentDate.getHours()
   }
 
+  // TODO
+  getValueOutputLabel() {
+    const value = this.currentDate.getMinutes()
+
+    return `${value}/60`
+  }
+
   getMaxValueOutputValue() {
     return 24
   }
