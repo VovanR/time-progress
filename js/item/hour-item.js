@@ -26,7 +26,6 @@ class HourItem extends BaseItem {
     return this.currentDate.getHours()
   }
 
-  // TODO
   getValueOutputLabel() {
     const value = this.currentDate.getMinutes()
 

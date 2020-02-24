@@ -27,7 +27,6 @@ class DayItem extends BaseItem {
     return this.currentDate.getDate()
   }
 
-  // TODO
   getValueOutputLabel() {
     const value = this.currentDate.getHours()
 

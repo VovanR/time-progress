@@ -26,7 +26,6 @@ class MinuteItem extends BaseItem {
     return this.currentDate.getMinutes()
   }
 
-  // TODO
   getValueOutputLabel() {
     const value = this.currentDate.getSeconds()
 
