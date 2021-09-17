@@ -36,8 +36,8 @@ class BaseItem {
     element.append(this.valueOutputElement)
     element.append(this.maxValueOutElement)
     element.append(this.valuePercentElement)
-    this.meterContainerElement.append(this.valueOutputLabelElement)
     this.meterContainerElement.append(this.meterElement)
+    this.meterContainerElement.append(this.valueOutputLabelElement)
     element.append(this.meterContainerElement)
 
     return this
