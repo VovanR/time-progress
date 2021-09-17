@@ -29,10 +29,14 @@ interval.start()
 
 function initItems() {
   const currentDate = new Date()
-  items.forEach(item => item.init().appendTo(appRootElement).setCurrentDate(currentDate).update())
+  for (const item of items) {
+    item.init().appendTo(appRootElement).setCurrentDate(currentDate).update()
+  }
 }
 
 function updateItems() {
   const currentDate = new Date()
-  items.forEach(item => item.setCurrentDate(currentDate).update())
+  for (const item of items) {
+    item.setCurrentDate(currentDate).update()
+  }
 }

@@ -47,13 +47,13 @@ function createElement({
     element.innerHTML = html
   } else if (children) {
     const appendChildElement = children => {
-      children.forEach(childElement => {
+      for (const childElement of children) {
         if (childElement instanceof Node) {
           element.append(childElement)
         } else if (Array.isArray(childElement)) {
           appendChildElement(childElement)
         }
-      })
+      }
     }
 
     appendChildElement(children)
