@@ -21,7 +21,7 @@ initItems()
 
 const interval = new TimeInterval({
   delay: 50,
-  onTick: () => {
+  onTick() {
     updateItems()
   }
 })

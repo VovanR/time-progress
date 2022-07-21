@@ -52,6 +52,7 @@ class YearItem extends BaseItem {
 function isLeapYear(date) {
   const year = date.getFullYear()
 
+  // eslint-disable-next-line no-bitwise
   if ((year & 3) !== 0) {
     return false
   }
