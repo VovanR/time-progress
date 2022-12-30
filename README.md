@@ -6,8 +6,6 @@
 [![XO code style][codestyle-image]][codestyle-url]
 
 [![Build Status][travis-image]][travis-url]
-[![Dependency Status][depstat-image]][depstat-url]
-[![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
 > Time statistics
 
@@ -25,9 +23,3 @@ MIT © [Vladimir Rodkin](https://github.com/VovanR)
 
 [travis-url]: https://travis-ci.org/VovanR/time-progress
 [travis-image]: https://img.shields.io/travis/VovanR/time-progress.svg?style=flat-square
-
-[depstat-url]: https://david-dm.org/VovanR/time-progress
-[depstat-image]: https://david-dm.org/VovanR/time-progress.svg?style=flat-square
-
-[depstat-dev-url]: https://david-dm.org/VovanR/time-progress
-[depstat-dev-image]: https://david-dm.org/VovanR/time-progress/dev-status.svg?style=flat-square
