@@ -14,7 +14,7 @@
   "keywords": [],
   "devDependencies": {
     "http-server": "^14.1.1",
-    "xo": "^0.51.0"
+    "xo": "^0.53.1"
   },
   "bugs": {
     "url": "https://github.com/VovanR/time-progress/issues"
